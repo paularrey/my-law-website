@@ -1,0 +1,500 @@
+/* ==========================================================================
+   THE LAW OFFICES OF JOSEPH A. ODABA - PRECISE COLOR MATRIX
+   ========================================================================== */
+
+:root {
+  /* Exact tones sampled directly from the provided design layout */
+  --espresso-dark: #1b0a07; /* Signature deep chocolate brown seen in the hero & footers */
+  --espresso-card: #271410; /* Lighter warm brown tone used inside dark section cards */
+  --gold-premium: #bfa168; /* The luxurious gold/amber for titles, stars, and buttons */
+  --gold-hover: #a3854e; /* Rich deep gold for hover feedback animations */
+  --cream-bg: #fbf9f4; /* Off-white warm background contrast panels */
+  --white: #ffffff; /* Default crisp background */
+  --text-charcoal: #2d2422; /* Off-black text color specialized for elite readability */
+  --text-muted: #706461; /* Muted ash brown for structural subtext lines */
+  --border-light: #eae0d2; /* Elegant fine lines to section content grid cards */
+}
+
+/* --- Global Overrides & Baseline Typography --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Times New Roman", Times, Georgia, serif;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--white);
+  color: var(--text-charcoal);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+.container {
+  width: 90%;
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+/* --- 1. Top Global Bar (Deep Espresso) --- */
+.top-bar {
+  background-color: var(--espresso-dark);
+  color: #e3deda;
+  font-size: 13px;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(191, 161, 104, 0.25);
+  font-family: "Arial", sans-serif;
+}
+.top-bar-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.top-bar i {
+  color: var(--gold-premium);
+  margin-right: 6px;
+}
+.top-right-info span {
+  margin-left: 18px;
+}
+
+/* --- 2. Executive Navigation Suite --- */
+header {
+  background-color: var(--white);
+  padding: 22px 0;
+  border-bottom: 1px solid #f5efe7;
+}
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo-area {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.scales-icon {
+  font-size: 38px;
+  color: var(--gold-premium);
+  line-height: 1;
+}
+.logo-text .logo-title {
+  font-size: 11px;
+  letter-spacing: 2.5px;
+  color: var(--text-muted);
+  font-family: "Arial", sans-serif;
+  font-weight: 700;
+}
+.logo-name {
+  font-size: 28px;
+  font-weight: normal;
+  color: var(--espresso-dark);
+  letter-spacing: 0.5px;
+  line-height: 1;
+  margin: 3px 0;
+}
+.logo-subtitle {
+  font-size: 10px;
+  letter-spacing: 4px;
+  color: var(--gold-premium);
+  font-family: "Arial", sans-serif;
+  font-weight: bold;
+}
+.main-nav {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+.main-nav a {
+  text-decoration: none;
+  color: var(--text-charcoal);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  font-family: "Arial", sans-serif;
+  transition: color 0.2s ease;
+}
+.main-nav a:hover,
+.main-nav a.active {
+  color: var(--gold-premium);
+}
+.btn-consultation {
+  background-color: var(--gold-premium);
+  color: var(--white) !important;
+  padding: 12px 24px;
+  font-size: 12px !important;
+  font-weight: 700 !important;
+  letter-spacing: 1px;
+  border-radius: 2px;
+  transition: background-color 0.2s ease;
+}
+.btn-consultation:hover {
+  background-color: var(--gold-hover);
+}
+
+/* --- 3. Hero Showcase Zone (Warm Dark Brown Gradient) --- */
+.hero {
+  position: relative;
+  /* Implements the exact dark-brown background tone utilizing a fall-back corporate banner overlay */
+  background:
+    linear-gradient(rgba(27, 10, 7, 0.94), rgba(27, 10, 7, 0.9)),
+    url("https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&q=80&w=1600");
+  background-size: cover;
+  background-position: center;
+  padding: 135px 0;
+  color: var(--white);
+}
+.hero-content {
+  max-width: 780px;
+}
+.hero-headline {
+  font-size: 46px;
+  font-weight: normal;
+  line-height: 1.2;
+  margin-bottom: 24px;
+}
+.accent-gold {
+  color: var(--gold-premium);
+}
+.hero-text {
+  font-size: 17px;
+  line-height: 1.7;
+  color: #eada91; /* Warm tinted readability color */
+  color: #ebdcd5;
+  margin-bottom: 40px;
+}
+.hero-actions {
+  display: flex;
+  gap: 15px;
+}
+.btn-gold-solid {
+  background-color: var(--gold-premium);
+  color: var(--white);
+  padding: 14px 32px;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: bold;
+  font-family: "Arial", sans-serif;
+  letter-spacing: 1px;
+  transition: background-color 0.2s;
+}
+.btn-gold-solid:hover {
+  background-color: var(--gold-hover);
+}
+
+.btn-phone-outline {
+  border: 1px solid var(--gold-premium);
+  color: var(--white);
+  padding: 14px 32px;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: bold;
+  font-family: "Arial", sans-serif;
+  letter-spacing: 1px;
+  transition:
+    background-color 0.2s,
+    color 0.2s;
+}
+.btn-phone-outline:hover {
+  background-color: var(--gold-premium);
+  color: var(--espresso-dark);
+}
+
+/* --- 4. Practice Areas Showcase (White Background Section) --- */
+.practice-areas {
+  padding: 95px 0;
+  background-color: var(--white);
+}
+.section-title {
+  text-align: center;
+  font-size: 26px;
+  font-weight: normal;
+  letter-spacing: 2px;
+  color: var(--espresso-dark);
+}
+.title-divider {
+  text-align: center;
+  color: var(--gold-premium);
+  font-size: 12px;
+  margin: 8px 0 50px 0;
+}
+.practice-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+}
+.practice-card {
+  border: 1px solid var(--border-light);
+  padding: 45px 24px;
+  text-align: center;
+  background: var(--white);
+  transition:
+    transform 0.2s,
+    border-color 0.2s,
+    box-shadow 0.2s;
+}
+.practice-card:hover {
+  border-color: var(--gold-premium);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(27, 10, 7, 0.05);
+}
+.card-icon-box {
+  font-size: 34px;
+  color: var(--gold-premium);
+  margin-bottom: 22px;
+}
+.practice-card h4 {
+  font-size: 14px;
+  font-family: "Arial", sans-serif;
+  color: var(--espresso-dark);
+  margin-bottom: 14px;
+  letter-spacing: 1px;
+  font-weight: 700;
+}
+.practice-card p {
+  font-size: 13.5px;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* --- 5. Bio Segment (Deep Chocolate Brown Background Panel) --- */
+.about-section {
+  background-color: var(--espresso-dark);
+  color: var(--white);
+  padding: 0;
+}
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  align-items: stretch;
+}
+.about-image-wrapper {
+  position: relative;
+  min-height: 500px;
+}
+.lawyer-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.about-info-box {
+  padding: 90px 70px;
+  background-color: var(--espresso-dark);
+}
+.about-info-box h3 {
+  font-size: 25px;
+  font-weight: normal;
+  color: var(--white);
+  letter-spacing: 1.5px;
+  margin-bottom: 25px;
+}
+.about-info-box p {
+  font-size: 16px;
+  line-height: 1.75;
+  margin-bottom: 24px;
+  color: #ebdcd5;
+}
+.why-choose-list {
+  list-style: none;
+  margin-top: 35px;
+}
+.why-choose-list li {
+  font-size: 15px;
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  color: #ebdcd5;
+}
+.why-choose-list i {
+  color: var(--gold-premium);
+  margin-right: 12px;
+  font-size: 14px;
+}
+
+/* --- 6. Client Testimonials (Rich Espresso / Charcoal Dark Brown) --- */
+.reviews-section {
+  background-color: #140705; /* Extra deep tone matching the lower sections */
+  padding: 95px 0;
+}
+.text-white {
+  color: var(--white);
+}
+.reviews-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+.review-card {
+  background-color: var(--espresso-dark);
+  padding: 45px;
+  border: 1px solid rgba(191, 161, 104, 0.2);
+}
+.stars {
+  color: var(--gold-premium);
+  margin-bottom: 18px;
+  font-size: 14px;
+}
+.review-body {
+  color: #e6ded9;
+  font-style: italic;
+  font-size: 16px;
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+.review-author {
+  color: var(--gold-premium);
+  font-family: "Arial", sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+/* --- 7. Contact Communications Split (Warm Cream / White Background) --- */
+.contact-cta {
+  background-color: var(--cream-bg);
+  border-top: 1px solid var(--border-light);
+  border-bottom: 1px solid var(--border-light);
+  padding: 55px 0;
+}
+.cta-flex {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+.cta-box {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: var(--white);
+  padding: 24px 45px;
+  border: 1px solid var(--border-light);
+  min-width: 360px;
+}
+.cta-icon {
+  font-size: 38px;
+  color: var(--gold-premium);
+}
+.whatsapp-color {
+  color: #25d366; /* Standard modern chat icon green code */
+}
+.cta-box h5 {
+  font-family: "Arial", sans-serif;
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  color: var(--text-muted);
+  font-weight: 700;
+}
+.cta-box p {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-bottom: 4px;
+}
+.cta-link {
+  font-size: 22px;
+  font-weight: bold;
+  color: var(--espresso-dark);
+  text-decoration: none;
+  letter-spacing: -0.5px;
+}
+
+/* --- 8. Firm Footer Matrix (Deepest Midnight Espresso Brown) --- */
+footer {
+  background-color: #110503;
+  color: #bfaea9;
+  padding: 85px 0 35px 0;
+  font-size: 14px;
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 0.7fr 1fr;
+  gap: 50px;
+  padding-bottom: 50px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+.footer-col h2 {
+  color: var(--white);
+  font-weight: normal;
+  font-size: 22px;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+}
+.footer-col h4 {
+  color: var(--gold-premium);
+  font-family: "Arial", sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  margin-bottom: 25px;
+  letter-spacing: 2px;
+}
+.footer-col a {
+  display: block;
+  color: #bfaea9;
+  text-decoration: none;
+  margin-bottom: 14px;
+  transition: color 0.2s;
+}
+.footer-col a:hover {
+  color: var(--gold-premium);
+}
+.footer-col p {
+  margin-bottom: 14px;
+  line-height: 1.6;
+}
+.footer-col i {
+  color: var(--gold-premium);
+  margin-right: 10px;
+  width: 14px;
+}
+.footer-bottom {
+  text-align: center;
+  font-size: 12px;
+  color: #6b5f5b;
+  padding-top: 35px;
+  font-family: "Arial", sans-serif;
+}
+
+/* --- Adaptive Viewport Layout Matrices --- */
+@media (max-width: 1024px) {
+  .practice-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+  .about-image-wrapper {
+    min-height: 380px;
+  }
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .header-content {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+  .main-nav {
+    flex-direction: column;
+    gap: 15px;
+  }
+  .hero h1 {
+    font-size: 34px;
+  }
+  .practice-grid,
+  .reviews-grid {
+    grid-template-columns: 1fr;
+  }
+  .top-bar-content {
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+  }
+}
