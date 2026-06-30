@@ -64,6 +64,7 @@ header {
   background-color: var(--white);
   padding: 22px 0;
   border-bottom: 1px solid #f5efe7;
+  position: relative; /* Added to keep nav stack order exact */
 }
 .header-content {
   display: flex;
@@ -134,6 +135,66 @@ header {
   background-color: var(--gold-hover);
 }
 
+/* ==========================================
+   ADDED: PURE CSS RESPONSIVE DROPDOWN ENGINE
+   ========================================== */
+.menu-toggle,
+.hamburger {
+  display: none; /* Default hidden on desktop screens */
+}
+
+/* Dropdown Wrapper Container */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+.dropdown-trigger {
+  display: flex;
+  align-items: center;
+}
+.dropdown-trigger .arrow {
+  font-size: 10px;
+  margin-left: 5px;
+  transition: transform 0.2s ease;
+}
+
+/* Hidden container state */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: -15px;
+  background-color: var(--white);
+  min-width: 230px;
+  box-shadow: 0px 8px 24px rgba(27, 10, 7, 0.12);
+  border-top: 3px solid var(--gold-premium);
+  padding: 8px 0;
+  z-index: 500;
+}
+.dropdown-content a {
+  display: block;
+  padding: 10px 20px;
+  color: var(--text-charcoal) !important;
+  font-weight: normal !important;
+  font-size: 13px;
+  letter-spacing: 0.5px;
+  border-bottom: none !important;
+}
+.dropdown-content a:hover {
+  background-color: var(--cream-bg);
+  color: var(--gold-premium) !important;
+}
+
+/* Hover reveal mechanic for Desktop layout sizes */
+@media (min-width: 769px) {
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  .dropdown:hover .dropdown-trigger .arrow {
+    transform: rotate(180deg);
+  }
+}
+
 /* --- 3. Hero Showcase Zone (Warm Dark Brown Gradient) --- */
 .hero {
   position: relative;
@@ -161,7 +222,6 @@ header {
 .hero-text {
   font-size: 17px;
   line-height: 1.7;
-  color: #eada91; /* Warm tinted readability color */
   color: #ebdcd5;
   margin-bottom: 40px;
 }
@@ -316,7 +376,7 @@ header {
 
 /* --- 6. Client Testimonials (Rich Espresso / Charcoal Dark Brown) --- */
 .reviews-section {
-  background-color: #140705; /* Extra deep tone matching the lower sections */
+  background-color: #140705;
   padding: 95px 0;
 }
 .text-white {
@@ -380,7 +440,7 @@ header {
   color: var(--gold-premium);
 }
 .whatsapp-color {
-  color: #25d366; /* Standard modern chat icon green code */
+  color: #25d366;
 }
 .cta-box h5 {
   font-family: "Arial", sans-serif;
@@ -475,16 +535,91 @@ footer {
   }
 }
 
+/* Refined and integrated responsive media query to preserve your style rules */
 @media (max-width: 768px) {
   .header-content {
-    flex-direction: column;
-    gap: 20px;
-    text-align: center;
+    flex-direction: row; /* Maintained layout grouping align values row-wise */
+    justify-content: space-between;
+    padding: 0 5%;
   }
+
+  /* Expose hamburger button element on smaller displays */
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 26px;
+    height: 18px;
+    cursor: pointer;
+    z-index: 1000;
+  }
+  .hamburger span {
+    display: block;
+    height: 2px;
+    width: 100%;
+    background-color: var(--espresso-dark);
+    transition: all 0.3s ease;
+  }
+
+  /* Shift standard menu items into slide-down full overlay layout drawer */
   .main-nav {
+    display: none;
     flex-direction: column;
-    gap: 15px;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: var(--white);
+    padding: 25px;
+    box-shadow: 0px 10px 20px rgba(27, 10, 7, 0.08);
+    gap: 20px;
+    align-items: flex-start;
+    z-index: 999;
   }
+  .main-nav a {
+    width: 100%;
+    padding: 5px 0;
+    border-bottom: 1px solid #f5efe7;
+  }
+  .btn-consultation {
+    text-align: center;
+    border-bottom: none;
+    margin-top: 5px;
+  }
+
+  /* Pure CSS Toggling Connector rule */
+  .menu-toggle:checked ~ .main-nav {
+    display: flex;
+  }
+
+  /* Transforms icon bars effortlessly to 'X' pattern */
+  .menu-toggle:checked ~ .hamburger span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  .menu-toggle:checked ~ .hamburger span:nth-child(2) {
+    opacity: 0;
+  }
+  .menu-toggle:checked ~ .hamburger span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  /* Accordion alternative layout mechanics for mobile drop menu */
+  .dropdown {
+    width: 100%;
+  }
+  .dropdown-content {
+    position: static;
+    box-shadow: none;
+    border-top: none;
+    border-left: 2px solid var(--gold-premium);
+    background-color: var(--cream-bg);
+    padding-left: 10px;
+    margin-top: 10px;
+  }
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
   .hero h1 {
     font-size: 34px;
   }
