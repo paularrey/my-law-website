@@ -485,7 +485,6 @@ footer {
   line-height: 1.6;
 }
 
-/* REFIXED: Aligns multi-line strings cleanly away from icons */
 .footer-contact-row {
   display: flex;
   align-items: flex-start;
@@ -603,7 +602,6 @@ footer {
     display: block;
   }
 
-  /* REFIXED: Hero Action Layout for Clean Mobile Presentation */
   .hero-headline {
     font-size: 34px;
   }
@@ -623,5 +621,46 @@ footer {
   .practice-grid,
   .reviews-grid {
     grid-template-columns: 1fr;
+  }
+
+  /* REFIXED: Mobile About Section Precise Text Alignment (matches green line in image_64b6fe.jpg) */
+  .about-info-box {
+    padding: 60px 0; /* Clear left/right padding so the container dictates layout */
+  }
+
+  /* Force all "About" text to have a rigid, uniform left padding (aligning title, paragraphs, and list) */
+  .about-info-box h3,
+  .about-info-box p,
+  .about-info-box ul {
+    padding-left: 40px !important;
+    text-align: left !important;
+  }
+
+  /* Specific mobile title rules */
+  .about-info-box h3 {
+    font-size: 28px !important;
+    line-height: 1.1;
+    display: block;
+    margin-bottom: 25px;
+  }
+
+  /* Reset list behavior on mobile to match paragraph flow */
+  .why-choose-list {
+    display: block !important;
+    margin-top: 30px;
+  }
+
+  /* Restructure list item: icon sits within the margin, text perfectly flush on the right */
+  .why-choose-list li {
+    display: flex;
+    align-items: flex-start !important;
+    padding-left: 0 !important; /* already inherited padding from ul */
+    margin-bottom: 12px;
+  }
+
+  .why-choose-list i {
+    flex-shrink: 0;
+    margin-right: 12px;
+    margin-top: 5px; /* Center with the first line of text */
   }
 }
