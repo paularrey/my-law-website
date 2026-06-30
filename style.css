@@ -3,16 +3,15 @@
    ========================================================================== */
 
 :root {
-  /* Exact tones sampled directly from the provided design layout */
-  --espresso-dark: #1b0a07; /* Signature deep chocolate brown seen in the hero & footers */
-  --espresso-card: #271410; /* Lighter warm brown tone used inside dark section cards */
-  --gold-premium: #bfa168; /* The luxurious gold/amber for titles, stars, and buttons */
-  --gold-hover: #a3854e; /* Rich deep gold for hover feedback animations */
-  --cream-bg: #fbf9f4; /* Off-white warm background contrast panels */
-  --white: #ffffff; /* Default crisp background */
-  --text-charcoal: #2d2422; /* Off-black text color specialized for elite readability */
-  --text-muted: #706461; /* Muted ash brown for structural subtext lines */
-  --border-light: #eae0d2; /* Elegant fine lines to section content grid cards */
+  --espresso-dark: #1b0a07;
+  --espresso-card: #271410;
+  --gold-premium: #bfa168;
+  --gold-hover: #a3854e;
+  --cream-bg: #fbf9f4;
+  --white: #ffffff;
+  --text-charcoal: #2d2422;
+  --text-muted: #706461;
+  --border-light: #eae0d2;
 }
 
 /* --- Global Overrides & Baseline Typography --- */
@@ -37,34 +36,12 @@ body {
   margin: 0 auto;
 }
 
-/* --- 1. Top Global Bar (Deep Espresso) --- */
-.top-bar {
-  background-color: var(--espresso-dark);
-  color: #e3deda;
-  font-size: 13px;
-  padding: 10px 0;
-  border-bottom: 1px solid rgba(191, 161, 104, 0.25);
-  font-family: "Arial", sans-serif;
-}
-.top-bar-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.top-bar i {
-  color: var(--gold-premium);
-  margin-right: 6px;
-}
-.top-right-info span {
-  margin-left: 18px;
-}
-
-/* --- 2. Executive Navigation Suite --- */
+/* --- Executive Navigation Suite --- */
 header {
   background-color: var(--white);
   padding: 22px 0;
   border-bottom: 1px solid #f5efe7;
-  position: relative; /* Added to keep nav stack order exact */
+  position: relative;
 }
 .header-content {
   display: flex;
@@ -135,15 +112,11 @@ header {
   background-color: var(--gold-hover);
 }
 
-/* ==========================================
-   ADDED: PURE CSS RESPONSIVE DROPDOWN ENGINE
-   ========================================== */
+/* --- Pure CSS Responsive Dropdown Elements --- */
 .menu-toggle,
 .hamburger {
-  display: none; /* Default hidden on desktop screens */
+  display: none;
 }
-
-/* Dropdown Wrapper Container */
 .dropdown {
   position: relative;
   display: inline-block;
@@ -157,8 +130,6 @@ header {
   margin-left: 5px;
   transition: transform 0.2s ease;
 }
-
-/* Hidden container state */
 .dropdown-content {
   display: none;
   position: absolute;
@@ -185,7 +156,6 @@ header {
   color: var(--gold-premium) !important;
 }
 
-/* Hover reveal mechanic for Desktop layout sizes */
 @media (min-width: 769px) {
   .dropdown:hover .dropdown-content {
     display: block;
@@ -195,10 +165,9 @@ header {
   }
 }
 
-/* --- 3. Hero Showcase Zone (Warm Dark Brown Gradient) --- */
+/* --- Hero Showcase Zone --- */
 .hero {
   position: relative;
-  /* Implements the exact dark-brown background tone utilizing a fall-back corporate banner overlay */
   background:
     linear-gradient(rgba(27, 10, 7, 0.94), rgba(27, 10, 7, 0.9)),
     url("https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&q=80&w=1600");
@@ -239,11 +208,14 @@ header {
   font-family: "Arial", sans-serif;
   letter-spacing: 1px;
   transition: background-color 0.2s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 .btn-gold-solid:hover {
   background-color: var(--gold-hover);
 }
-
 .btn-phone-outline {
   border: 1px solid var(--gold-premium);
   color: var(--white);
@@ -256,13 +228,20 @@ header {
   transition:
     background-color 0.2s,
     color 0.2s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.btn-phone-outline i {
+  margin-right: 8px;
 }
 .btn-phone-outline:hover {
   background-color: var(--gold-premium);
   color: var(--espresso-dark);
 }
 
-/* --- 4. Practice Areas Showcase (White Background Section) --- */
+/* --- Practice Areas Showcase --- */
 .practice-areas {
   padding: 95px 0;
   background-color: var(--white);
@@ -319,7 +298,7 @@ header {
   line-height: 1.6;
 }
 
-/* --- 5. Bio Segment (Deep Chocolate Brown Background Panel) --- */
+/* --- Bio Segment --- */
 .about-section {
   background-color: var(--espresso-dark);
   color: var(--white);
@@ -374,7 +353,7 @@ header {
   font-size: 14px;
 }
 
-/* --- 6. Client Testimonials (Rich Espresso / Charcoal Dark Brown) --- */
+/* --- Client Testimonials --- */
 .reviews-section {
   background-color: #140705;
   padding: 95px 0;
@@ -412,7 +391,7 @@ header {
   letter-spacing: 1px;
 }
 
-/* --- 7. Contact Communications Split (Warm Cream / White Background) --- */
+/* --- Contact Communications Split --- */
 .contact-cta {
   background-color: var(--cream-bg);
   border-top: 1px solid var(--border-light);
@@ -462,7 +441,7 @@ header {
   letter-spacing: -0.5px;
 }
 
-/* --- 8. Firm Footer Matrix (Deepest Midnight Espresso Brown) --- */
+/* --- Firm Footer Matrix --- */
 footer {
   background-color: #110503;
   color: #bfaea9;
@@ -505,11 +484,26 @@ footer {
   margin-bottom: 14px;
   line-height: 1.6;
 }
-.footer-col i {
-  color: var(--gold-premium);
-  margin-right: 10px;
-  width: 14px;
+
+/* REFIXED: Aligns multi-line strings cleanly away from icons */
+.footer-contact-row {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 14px;
+  line-height: 1.6;
 }
+.footer-contact-row i {
+  color: var(--gold-premium);
+  margin-right: 12px;
+  margin-top: 4px;
+  width: 16px;
+  text-align: center;
+  flex-shrink: 0;
+}
+.footer-contact-row span {
+  display: block;
+}
+
 .footer-bottom {
   text-align: center;
   font-size: 12px;
@@ -535,15 +529,12 @@ footer {
   }
 }
 
-/* Refined and integrated responsive media query to preserve your style rules */
 @media (max-width: 768px) {
   .header-content {
-    flex-direction: row; /* Maintained layout grouping align values row-wise */
+    flex-direction: row;
     justify-content: space-between;
     padding: 0 5%;
   }
-
-  /* Expose hamburger button element on smaller displays */
   .hamburger {
     display: flex;
     flex-direction: column;
@@ -560,8 +551,6 @@ footer {
     background-color: var(--espresso-dark);
     transition: all 0.3s ease;
   }
-
-  /* Shift standard menu items into slide-down full overlay layout drawer */
   .main-nav {
     display: none;
     flex-direction: column;
@@ -586,13 +575,9 @@ footer {
     border-bottom: none;
     margin-top: 5px;
   }
-
-  /* Pure CSS Toggling Connector rule */
   .menu-toggle:checked ~ .main-nav {
     display: flex;
   }
-
-  /* Transforms icon bars effortlessly to 'X' pattern */
   .menu-toggle:checked ~ .hamburger span:nth-child(1) {
     transform: translateY(8px) rotate(45deg);
   }
@@ -602,8 +587,6 @@ footer {
   .menu-toggle:checked ~ .hamburger span:nth-child(3) {
     transform: translateY(-8px) rotate(-45deg);
   }
-
-  /* Accordion alternative layout mechanics for mobile drop menu */
   .dropdown {
     width: 100%;
   }
@@ -620,16 +603,25 @@ footer {
     display: block;
   }
 
-  .hero h1 {
+  /* REFIXED: Hero Action Layout for Clean Mobile Presentation */
+  .hero-headline {
     font-size: 34px;
   }
+  .hero-actions {
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+  }
+  .btn-gold-solid,
+  .btn-phone-outline {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 16px;
+    font-size: 14px;
+  }
+
   .practice-grid,
   .reviews-grid {
     grid-template-columns: 1fr;
-  }
-  .top-bar-content {
-    flex-direction: column;
-    gap: 8px;
-    text-align: center;
   }
 }

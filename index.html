@@ -5,30 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>The Law Offices of Joseph A. Odaba</title>
     <link rel="stylesheet" href="style.css" />
+    <!-- Font Awesome Icons -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
   </head>
   <body>
-    <div class="top-bar">
-      <div class="container top-bar-content">
-        <div class="top-left-info">
-          <i class="fa-solid fa-location-dot"></i> 125 West Meeting Street,
-          Suite 204, Lancaster, SC 29720
-        </div>
-        <div class="top-right-info">
-          <span><i class="fa-solid fa-phone"></i> +1(732) 964-4514</span> |
-          <span
-            ><i class="fa-solid fa-mobile-screen-button"></i> +1(314)
-            952-8447</span
-          >
-          |
-          <span><i class="fa-solid fa-envelope"></i> odabajoe@gmail.com</span>
-        </div>
-      </div>
-    </div>
+    <!-- TOP BAR REMOVED ENTIRELY FOR A CLEANER HEADER LOOK -->
 
+    <!-- HEADER / NAVIGATION -->
     <header>
       <div class="container header-content">
         <div class="logo-area">
@@ -40,6 +26,7 @@
           </div>
         </div>
 
+        <!-- Pure CSS Mobile Menu Checkbox Trigger -->
         <input type="checkbox" id="menu-toggle" class="menu-toggle" />
         <label for="menu-toggle" class="hamburger">
           <span></span>
@@ -47,10 +34,12 @@
           <span></span>
         </label>
 
+        <!-- Main Nav transformed to handle Dropdowns and Mobile Drawer -->
         <nav class="main-nav">
           <a href="#home" class="active">HOME</a>
           <a href="#about">ABOUT</a>
 
+          <!-- Dropdown Architecture -->
           <div class="dropdown">
             <a href="#practice" class="dropdown-trigger"
               >PRACTICE AREAS <i class="fa-solid fa-chevron-down arrow"></i
@@ -70,6 +59,7 @@
       </div>
     </header>
 
+    <!-- HERO SECTION -->
     <section id="home" class="hero">
       <div class="hero-overlay"></div>
       <div class="container hero-content">
@@ -95,6 +85,7 @@
       </div>
     </section>
 
+    <!-- PRACTICE AREAS -->
     <section id="practice" class="practice-areas">
       <div class="container">
         <h3 class="section-title">PRACTICE AREAS</h3>
@@ -143,6 +134,7 @@
       </div>
     </section>
 
+    <!-- ABOUT SECTION -->
     <section id="about" class="about-section">
       <div class="container about-grid">
         <div class="about-image-wrapper">
@@ -181,6 +173,7 @@
       </div>
     </section>
 
+    <!-- TESTIMONIALS & REVIEWS -->
     <section id="reviews" class="reviews-section">
       <div class="container">
         <h3 class="section-title text-white">WHAT OUR CLIENTS SAY</h3>
@@ -215,6 +208,7 @@
       </div>
     </section>
 
+    <!-- CONTACT / FOOTER PANEL -->
     <section id="contact" class="contact-cta">
       <div class="container cta-flex">
         <div class="cta-box">
@@ -253,15 +247,23 @@
         </div>
         <div class="footer-col contact-info">
           <h4>CONTACT INFO</h4>
-          <p>
-            <i class="fa-solid fa-location-dot"></i> 125 West Meeting Street,
-            Suite 204, Lancaster, SC 29720
-          </p>
-          <p><i class="fa-solid fa-phone"></i> Main: +1(732) 964-4514</p>
-          <p>
-            <i class="fa-solid fa-mobile-button"></i> Direct: +1(314) 952-8447
-          </p>
-          <p><i class="fa-solid fa-envelope"></i> odabajoe@gmail.com</p>
+          <!-- Flex rows isolate icons from blocks of text to prevent wrapping errors -->
+          <div class="footer-contact-row">
+            <i class="fa-solid fa-location-dot"></i>
+            <span>125 West Meeting Street, Suite 204, Lancaster, SC 29720</span>
+          </div>
+          <div class="footer-contact-row">
+            <i class="fa-solid fa-phone"></i>
+            <span>Main: +1(732) 964-4514</span>
+          </div>
+          <div class="footer-contact-row">
+            <i class="fa-solid fa-mobile-button"></i>
+            <span>Direct: +1(314) 952-8447</span>
+          </div>
+          <div class="footer-contact-row">
+            <i class="fa-solid fa-envelope"></i>
+            <span>odabajoe@gmail.com</span>
+          </div>
         </div>
       </div>
       <div class="footer-bottom">
