@@ -5,16 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>The Law Offices of Joseph A. Odaba</title>
     <link rel="stylesheet" href="style.css" />
-    <script src="script.js" defer></script>
     <!-- Font Awesome Icons -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
+    <!-- JavaScript -->
+    <script src="script.js" defer></script>
   </head>
   <body>
-    <!-- TOP BAR REMOVED ENTIRELY FOR A CLEANER HEADER LOOK -->
-
     <!-- HEADER / NAVIGATION -->
     <header>
       <div class="container header-content">
@@ -142,7 +141,6 @@
           <img src="law.jpeg" alt="Joseph A. Odaba, Esq." class="lawyer-img" />
         </div>
         <div class="about-info-box">
-          <!-- Text alignment is forced in mobile CSS here -->
           <h3>ABOUT JOSEPH A. ODABA, ESQ.</h3>
           <p>
             Joseph A. Odaba is an experienced Attorney & Counselor at Law
@@ -150,13 +148,12 @@
             treating every client with honesty, respect, and professionalism.
           </p>
           <p>
-            Every case is unique. That’s why our firm carefully evaluates every
+            Every case is unique. That's why our firm carefully evaluates every
             detail before building a defense strategy designed to achieve the
             best possible outcome.
           </p>
 
           <ul class="why-choose-list">
-            <!-- Simplified list structure allows easy CSS alignment -->
             <li>
               <i class="fa-solid fa-circle-check"></i>
               <span>Personalized Legal Representation</span>
@@ -192,8 +189,8 @@
               ><i class="fa-solid fa-star"></i>
             </div>
             <p class="review-body">
-              “Mr. Odaba explained every step of my case and fought tirelessly
-              for the best possible outcome. I highly recommend his services.”
+              "Mr. Odaba explained every step of my case and fought tirelessly
+              for the best possible outcome. I highly recommend his services."
             </p>
             <span class="review-author">— Megan</span>
           </div>
@@ -204,8 +201,8 @@
               ><i class="fa-solid fa-star"></i>
             </div>
             <p class="review-body">
-              “Professional, knowledgeable, and always available to answer my
-              questions.”
+              "Professional, knowledgeable, and always available to answer my
+              questions."
             </p>
             <span class="review-author">— Brandon</span>
           </div>
@@ -246,14 +243,35 @@
           </div>
         </div>
 
-        <!-- Contact Form -->
+        <!-- Contact Form (with FormSubmit) -->
         <div class="contact-form-wrapper">
           <h4>SEND US A MESSAGE</h4>
           <p>
             Fill out the form below and we will respond within 24 hours. All
             consultations are confidential.
           </p>
-          <form id="contact-form" novalidate>
+          <form
+            id="contact-form"
+            action="https://formsubmit.co/odabajoe@gmail.com"
+            method="POST"
+            novalidate
+          >
+            <!-- ✅ FormSubmit hidden inputs -->
+            <input
+              type="hidden"
+              name="_subject"
+              value="New Client Inquiry - Law Office Website"
+            />
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="hidden" name="_template" value="table" />
+            <input
+              type="hidden"
+              name="_next"
+              value="https://yoursite.com/thank-you.html"
+            />
+            <!-- Honeypot spam protection (hidden from humans, bots will fill it) -->
+            <input type="text" name="_honey" style="display: none" />
+
             <div class="form-group">
               <label for="name">FULL NAME *</label>
               <input
@@ -308,7 +326,7 @@
             </div>
             <button type="submit" class="form-submit">SEND MESSAGE</button>
             <div class="form-success">
-              ✓ Thank you! Your message has been received. We will contact you
+              ✓ Thank you! Your message has been sent. We will contact you
               shortly.
             </div>
           </form>
@@ -320,7 +338,7 @@
       <div class="container footer-grid">
         <div class="footer-col branding">
           <h2>JOSEPH A. ODABA</h2>
-          <p>“Protecting your rights. Defending your future.”</p>
+          <p>"Protecting your rights. Defending your future."</p>
         </div>
         <div class="footer-col links">
           <h4>QUICK LINKS</h4>
@@ -331,7 +349,6 @@
         </div>
         <div class="footer-col contact-info">
           <h4>CONTACT INFO</h4>
-          <!-- Flex rows isolate icons from blocks of text to prevent wrapping errors -->
           <div class="footer-contact-row">
             <i class="fa-solid fa-location-dot"></i>
             <span>125 West Meeting Street, Suite 204, Lancaster, SC 29720</span>
@@ -351,9 +368,11 @@
         </div>
       </div>
       <div class="footer-bottom">
-        &copy; 2026 The Law Offices of Joseph A. Odaba. All Rights Reserved.
+        &copy; <span id="footer-year">2026</span> The Law Offices of Joseph A.
+        Odaba. All Rights Reserved.
       </div>
     </footer>
+
     <!-- BACK TO TOP BUTTON -->
     <button
       type="button"

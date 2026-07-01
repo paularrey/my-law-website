@@ -242,14 +242,13 @@
   }
 
   /* --------------------------------------------------------------------------
-     CONTACT FORM HANDLING
+     CONTACT FORM HANDLING (with FormSubmit)
      -------------------------------------------------------------------------- */
   function initContactForm() {
     if (!dom.contactForm) return;
 
     dom.contactForm.addEventListener("submit", (e) => {
-      e.preventDefault();
-      handleFormSubmit();
+      handleFormSubmit(e);
     });
 
     const inputs = dom.contactForm.querySelectorAll("input, textarea");
@@ -299,10 +298,12 @@
     }
   }
 
-  function handleFormSubmit() {
+  function handleFormSubmit(e) {
+    // ✅ Use event parameter so we can let FormSubmit handle the actual sending
     const formData = new FormData(dom.contactForm);
     const data = Object.fromEntries(formData);
 
+    // Validate all required fields
     const inputs = dom.contactForm.querySelectorAll(
       "input[required], textarea[required]",
     );
@@ -312,30 +313,24 @@
     });
 
     if (!isFormValid) {
+      e.preventDefault(); // Stop submission if invalid
       showNotification("Please correct the errors above.", "error");
       return;
     }
 
-    showFormSuccess(data);
+    // ✅ Show success message and let the form submit naturally to FormSubmit
+    showNotification("Thank you! Your message is being sent...", "success");
+
+    // ✅ FormSubmit will email you AND redirect to your thank-you page
+    // Form submission continues normally
   }
 
-  function showFormSuccess(data) {
+  function showFormSuccess() {
     const successMsg = dom.contactForm.querySelector(".form-success");
     if (successMsg) {
-      dom.contactForm.reset();
       successMsg.classList.add("visible");
       setTimeout(() => successMsg.classList.remove("visible"), 6000);
     }
-
-    const phone = "13149528447";
-    const message = encodeURIComponent(
-      `Hello, my name is ${data.name}. ${
-        data.message || "I'd like to schedule a free consultation."
-      }`,
-    );
-    console.log(`WhatsApp link: https://wa.me/${phone}?text=${message}`);
-
-    showNotification("Thank you! We will contact you shortly.", "success");
   }
 
   /* --------------------------------------------------------------------------
